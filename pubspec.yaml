@@ -1,0 +1,33 @@
+name: innopolis_test
+description: A new Flutter project.
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.14.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.2
+  flutter_lints: ^1.0.4
+  dio: ^4.0.1
+  fluttertoast: ^8.0.8
+
+# flutter packages pub run build_runner build --delete-conflicting-outputs
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  integration_test:
+    sdk: flutter
+  bloc_test: ^8.3.0
+  build_runner: ^2.1.4
+  json_serializable: ^5.0.2
+  json_annotation: ^4.1.0
+  freezed: ^0.15.0+1
+  freezed_annotation: ^0.15.0
+
+
+
+flutter:
+  uses-material-design: true
