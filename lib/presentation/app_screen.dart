@@ -1,17 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:innopolis_test/data/data.dart';
+import 'package:innopolis_test/data/mock_data_repository.dart';
 import 'package:innopolis_test/domain/model/data_model.dart';
-import 'package:innopolis_test/domain/repository/data_repository.dart';
 import 'package:innopolis_test/presentation/widgets/init_title.dart';
 
+import '../data/network_data_repository.dart';
 import 'widgets/data_page.dart';
 
 class AppScreen extends StatefulWidget {
-  final DataRepository repository;
-
   const AppScreen({
     Key? key,
-    required this.repository,
   }) : super(key: key);
 
   @override
@@ -20,6 +17,7 @@ class AppScreen extends StatefulWidget {
 
 class _AppScreenState extends State<AppScreen> {
   Future<DataModel>? futureDataModel;
+  final dataRepository = MockDataRepository();
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +28,7 @@ class _AppScreenState extends State<AppScreen> {
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           setState(() {
-            futureDataModel = fetchData(widget.repository);
+            futureDataModel = dataRepository.fetchData();
           });
         },
         child: const Icon(Icons.get_app_sharp),
