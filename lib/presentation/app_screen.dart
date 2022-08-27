@@ -3,7 +3,6 @@ import 'package:innopolis_test/data/mock_data_repository.dart';
 import 'package:innopolis_test/domain/model/data_model.dart';
 import 'package:innopolis_test/presentation/widgets/init_title.dart';
 
-import '../data/network_data_repository.dart';
 import 'widgets/data_page.dart';
 
 class AppScreen extends StatefulWidget {
@@ -43,7 +42,6 @@ class _AppScreenState extends State<AppScreen> {
           if (snapshot.data != null) {
             return BodyPage(dataModel: snapshot.data);
           }
-
           return const InitTitle();
         },
       ),
