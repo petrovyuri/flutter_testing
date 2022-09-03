@@ -1,9 +1,8 @@
 abstract class Utilities {
   static String convertHumanTemp(double? temperature) {
     try {
-      final value = int.parse(temperature.toString().split(".").first);
-      return "$value °C";
-    } catch (error) {
+      return "${temperature!.toInt()} °C";
+    } catch (_) {
       return "Ошибка данных";
     }
   }
